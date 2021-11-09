@@ -7,7 +7,7 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);   //시리얼모니터
   mySerial.begin(9600); //블루투스 시리얼
-}
+}                                                       //블루투스에 문제가 있음
 
 void loop() {
   // put your main code here, to run repeatedly:
