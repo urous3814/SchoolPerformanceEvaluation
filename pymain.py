@@ -1,6 +1,6 @@
 import serial
 import turtle as tu
-
+                        //현재는 이동등의 기능을 배제한 후 제작
 
 arduino_port = input("통신 포트 이름: ")
 
