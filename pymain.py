@@ -5,6 +5,11 @@ import math as m
 
 arduino_port = input("통신 포트 이름: ")
 
+turtle_size = int(input("터틀 DOT 크기 지정: "))
+
+turtle_dis = int(input("터틀 거리 배율 지정: "))
+
+
 serialFromArduino = serial.Serial(arduino_port, 9600, timeout=1)
 t = tu.Pen()
 t.speed(300)
@@ -24,10 +29,10 @@ while True:
     if(d>0 and d<60):
       t.left(ang)
       t.penup()
-      t.forward(d*15)
+      t.forward(d*turtle_dis)
       t.begin_fill()
-      t.circle(15)
+      t.circle(turtle_size)
       t.end_fill()
-      t.backward(d*15)
+      t.backward(d*turtle_dis)
       t.right(ang)
       
