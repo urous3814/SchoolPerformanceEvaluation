@@ -39,6 +39,7 @@ void loop() {
         servo.write(ang);
         dis = pulse();
         BTSerial.write(ang+"#"+dis);       
-        delay(300); 
+        delay(100); 
       }
+  delay(1000);
 }
