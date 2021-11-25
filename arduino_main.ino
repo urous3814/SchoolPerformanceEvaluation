@@ -4,7 +4,7 @@
 #define blueRx 1   //Rx (받는핀 설정)
 #define TRIG 10
 #define ECHO 8
-int servoPin=9;
+#define servoPin 9
 SoftwareSerial BTSerial(blueTx, blueRx);  //시리얼 통신을 위한 객체선언
 Servo servo; 
 int ang = 0, dis = 0;
@@ -16,7 +16,7 @@ void setup() {
   servo.attach(servoPin); 
   pinMode(TRIG, OUTPUT);
   pinMode(ECHO, INPUT);
-}                                                       //블루투스에 문제가 있음
+}                                                       
 
 int pulse(){
   long duration, distance;
@@ -33,12 +33,13 @@ int pulse(){
 void loop() {
   // put your main code here, to run repeatedly:
 
-   if(BTSerial.available())                     // BTSerial에 입력이 되면
-      for(ang; ang>360; ang)
+//   if(BTSerial.available())                     // BTSerial에 입력이 되면
+      for(ang = 0; ang>360; ang++)
       {
         servo.write(ang);
         dis = pulse();
         BTSerial.write(ang+"#"+dis);       
+        Serial.write(ang+"#"+dis);
         delay(100); 
       }
   delay(1000);
