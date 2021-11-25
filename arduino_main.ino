@@ -34,12 +34,13 @@ void loop() {
   // put your main code here, to run repeatedly:
 
 //   if(BTSerial.available())                     // BTSerial에 입력이 되면
-      for(ang = 0; ang>360; ang++)
+      for(ang = 0; ang<360; ang+=5)
       {
         servo.write(ang);
         dis = pulse();
-        BTSerial.write(ang+"#"+dis);       
-        Serial.write(ang+"#"+dis);
+        String data = (String(ang)+"_"+String(dis));
+        BTSerial.println(data);       
+        Serial.println(data);
         delay(100); 
       }
   delay(1000);
