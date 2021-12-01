@@ -31,7 +31,6 @@ int pulse() {   //초음파센서 함수, 정수형 값을 return한다
 
 void loop() {
   // put your main code here, to run repeatedly:
-
   if(BTSerial.available())    // 시리얼 버퍼에 있는 데이터의 길이를 바이트 단위로 불러옴
   {
     for (ang = 0; ang < 360; ang += 10)
