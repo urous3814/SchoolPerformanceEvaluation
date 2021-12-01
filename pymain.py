@@ -16,8 +16,8 @@ t = tu.Pen()    #터틀의 펜 선언
 t.speed(300)    #펜의 속도 설정
 
 while True:
-    if serialFromArduino.in_waiting == 0 :
-        continue
+    if serialFromArduino.in_waiting == 0 : #캐시에 받은 바이트 수
+        pass
     line = serialFromArduino.readline().decode("utf-8") #문자열을 받아와 utf-8로 디코딩
     print(line)
     ang, dis = line.split("_")          #line = 각도_거리
