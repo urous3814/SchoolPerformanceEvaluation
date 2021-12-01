@@ -17,7 +17,7 @@ t.speed(300)    #펜의 속도 설정
 
 while True:
     if serialFromArduino.in_waiting == 0 :
-        pass
+        continue
     line = serialFromArduino.readline().decode("utf-8") #문자열을 받아와 utf-8로 디코딩
     print(line)
     ang, dis = line.split("_")          #line = 각도_거리
