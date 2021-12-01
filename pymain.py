@@ -8,8 +8,6 @@ while True:         #시리얼 통신 연결
         continue
     else: 
         break
-        
-
 turtle_size = int(input("터틀 DOT 크기 지정: "))
 turtle_dis = int(input("터틀 거리 배율 지정: "))
 t = tu.Pen()    #터틀의 펜 선언
