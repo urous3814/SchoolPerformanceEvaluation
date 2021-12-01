@@ -3,7 +3,7 @@ import turtle as tu #turtle, 파이썬의 대표적인 기초 그래픽 모델
 while True:         #시리얼 통신 연결
     arduino_port = input("통신 포트 이름: ")
     try:
-        ard_serial = serial.Serial(arduino_port, 9600, timeout=None)  #시리얼 통신 형성
+        ard_serial = serial.Serial(arduino_port, 9600, timeout=2)  #시리얼 통신 형성
     except:
         continue
     else: 
